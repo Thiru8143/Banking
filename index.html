@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Application</title>
+    <link rel="stylesheet" href="bank.css">
+</head>
+<body>
+    <div class="container">
+
+        <!-- Home Page Section -->
+        <div id="home-page">
+            <h1 style="color: rgb(235, 121, 15);">Welcome To RVS Bank</h1>
+            <button onclick="showLogin()">Login</button>
+            <button onclick="showCreateAccount()">Create Account</button>
+            <button onclick="showBankingDashboard()" style="display:none;">Access Banking Dashboard</button>
+        </div>
+
+        <!-- Login Form Section -->
+        <div id="login-form" style="display:none;">
+            <h2>Login</h2>
+            <input id="username" type="text" placeholder="Username" required>
+            <input id="password" type="password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+            <p id="login-message"></p>
+            <button onclick="showCreateAccount()">Create Account</button>
+            <button onclick="showHomePage()">Back to Home</button>
+        </div>
+
+        <!-- Create Account Form Section -->
+        <div id="create-account-form" style="display:none;">
+            <h2>Create Account</h2>
+            <input id="new-username" type="text" placeholder="Username" required>
+            <input id="new-password" type="password" placeholder="Password" required>
+            <button onclick="createAccount()">Create Account</button>
+            <p id="create-account-message"></p>
+            <button onclick="showLogin()">Back to Login</button>
+        </div>
+
+        <!-- Banking Dashboard Section -->
+        <div id="banking-dashboard" style="display:none;">
+            <h2>Welcome <span id="user-name"></span></h2>
+            <div class="balance-section">
+                <h3>Balance: ₹<span id="balance">0</span></h3>
+            </div>
+            <div class="operations">
+                <input id="amount" type="number" placeholder="Amount" required>
+                <button onclick="deposit()">Deposit</button>
+                <button onclick="withdraw()">Withdraw</button>
+            </div>
+            <div id="transaction-history" style="display:none;">
+                <h3>Transaction History</h3>
+                <ul id="transaction-list"></ul>
+                <button onclick="hideTransactionHistory()">Close</button>
+            </div>
+            <button onclick="showTransactionHistory()">View Transaction History</button>
+            <button onclick="showBalance()">View Balance</button>
+            <button onclick="logout()">Logout</button>
+            <button onclick="showHomePage()">Back to Home</button>
+        </div>
+
+    </div>
+
+    <script src="bank.js"></script>
+</body>
+</html>
